@@ -4,7 +4,6 @@ import { GlobalState } from "./GlobalState";
 import { useGlobalStateReducer } from "./useGlobalStateReducer";
 
 type Config = {
-  store: GlobalStateStore;
   default?: any;
   selector?: (state: any) => any;
   patcher?: (state: any, selectedState: any) => any;
@@ -12,10 +11,10 @@ type Config = {
 };
 
 function useGlobalState(
+  store: GlobalStateStore,
   globalState: string | GlobalState,
   config: Config
 ): [any, (value: any) => any, (state: any) => any] {
-  const { store } = config;
   if (typeof globalState === "string") {
     globalState = store.getState(globalState, config);
   }

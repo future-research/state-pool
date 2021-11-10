@@ -6,7 +6,6 @@ import { GlobalStateStore } from "./GlobalStateStore";
 
 type Reducer = (currentState: any, newState: any) => any;
 type Config = {
-  store: GlobalStateStore;
   default?: any;
   selector?: (state: any) => any;
   patcher?: (state: any, selectedState: any) => any;
@@ -14,11 +13,11 @@ type Config = {
 };
 
 function useGlobalStateReducer(
+  store: GlobalStateStore,
   reducer: Reducer,
   globalState: string | GlobalState,
   config: Config
 ): [any, (action: any) => any] {
-  const { store } = config;
   let _globalState: GlobalState;
 
   if (typeof globalState === "string") {
