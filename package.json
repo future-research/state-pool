@@ -1,58 +1,60 @@
 {
-    "name": "state-pool",
-    "private": true,
-    "version": "0.6.0",
-    "description": "React state management library based on global variables and react hooks.",
-    "license": "MIT",
-    "homepage": "https://github.com/yezyilomo/state-pool/blob/master/README.md",
-    "repository": "https://github.com/yezyilomo/state-pool",
-    "bugs": "https://github.com/yezyilomo/state-pool/issues",
-    "keywords": [
-        "state",
-        "immutable"
-    ],
-    "authors": [
-        "Yezileli Ilomo <yezileliilomo@hotmail.com> (https://github.com/yezyilomo)"
-    ],
-    "main": "index.js",
-    "module": "esm/index.js",
-    "types": "index.d.ts",
-    "files": ["**"],
-    "sideEffects": false,
-    "scripts": {
-        "prebuild": "shx rm -rf dist",
-        "build": "tsc",
-        "postbuild": "npm run copy",
-        "test": "shx rm -rf dist && tsc && jest ./dist/test && shx rm -rf dist",
-        "copy": "shx mkdir dist/esm && shx cp -r dist/src/* dist/esm && shx mv dist/src/* dist && shx rm -rf dist/{src,tests} && shx cp package.json README.md LICENSE dist && json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.scripts=undefined;\"",
-        "publish:dist": "npm run build && cd dist && npm publish"
-    },
-    "exports": {
-        "./package.json": "./package.json",
-        ".": {
-            "types": "./index.d.ts",
-            "module": "./esm/index.js",
-            "import": "./esm/index.js",
-            "default": "./index.js"
-        }
-    },
-    "dependencies": {
-        "immer": ">=6.0.3"
-    },
-    "peerDependencies": {
-        "react": ">=16.8.3"
-    },
-    "devDependencies": {
-        "@babel/preset-env": ">=7.7.7",
-        "@babel/preset-react": ">=7.7.4",
-        "@testing-library/react-hooks": ">=3.2.1",
-        "babel-eslint": ">=10.0.3",
-        "babel-jest": ">=24.9.0",
-        "jest": ">=24.9.0",
-        "json": "^11.0.0",
-        "react": ">=16.8.3",
-        "react-test-renderer": ">=16.12.0",
-        "shx": "^0.3.3",
-        "typescript": "^4.3.5"
+  "name": "@feature-research/state-pool",
+  "private": true,
+  "version": "1.0.0",
+  "description": "React state management library based on global variables and react hooks.",
+  "license": "MIT",
+  "homepage": "https://github.com/yezyilomo/state-pool/blob/master/README.md",
+  "repository": "https://github.com/yezyilomo/state-pool",
+  "bugs": "https://github.com/yezyilomo/state-pool/issues",
+  "keywords": [
+    "state",
+    "immutable"
+  ],
+  "authors": [
+    "Yezileli Ilomo <yezileliilomo@hotmail.com> (https://github.com/yezyilomo)"
+  ],
+  "main": "index.js",
+  "module": "esm/index.js",
+  "types": "index.d.ts",
+  "files": [
+    "**"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "prebuild": "shx rm -rf dist",
+    "build": "tsc",
+    "postbuild": "npm run copy",
+    "test": "shx rm -rf dist && tsc && jest ./dist/test && shx rm -rf dist",
+    "copy": "shx mkdir dist/esm && shx cp -r dist/src/* dist/esm && shx mv dist/src/* dist && shx rm -rf dist/{src,tests} && shx cp package.json README.md LICENSE dist && json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.scripts=undefined;\"",
+    "publish:dist": "npm run build && cd dist && npm publish"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "module": "./esm/index.js",
+      "import": "./esm/index.js",
+      "default": "./index.js"
     }
+  },
+  "dependencies": {
+    "immer": ">=6.0.3"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.3"
+  },
+  "devDependencies": {
+    "@babel/preset-env": ">=7.7.7",
+    "@babel/preset-react": ">=7.7.4",
+    "@testing-library/react-hooks": ">=3.2.1",
+    "babel-eslint": ">=10.0.3",
+    "babel-jest": ">=24.9.0",
+    "jest": ">=24.9.0",
+    "json": "^11.0.0",
+    "react": ">=16.8.3",
+    "react-test-renderer": ">=16.12.0",
+    "shx": "^0.3.3",
+    "typescript": "^4.3.5"
+  }
 }
