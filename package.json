@@ -1,5 +1,5 @@
 {
-  "name": "@feature-research/state-pool",
+  "name": "@future-research/state-pool",
   "private": true,
   "version": "1.0.0",
   "description": "React state management library based on global variables and react hooks.",
