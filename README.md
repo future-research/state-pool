@@ -1,3 +1,5 @@
+This is not used. It is forked for reference.
+
 # State Pool
 React state management library based on global variables and react hooks.
 
